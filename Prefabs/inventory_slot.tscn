@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw5xjeqg7cd65"]
+
+[ext_resource type="Texture2D" uid="uid://b5rctlkb0rcjg" path="res://icon.svg" id="1_37v5s"]
+[ext_resource type="Script" path="res://Source/GridSlot.gd" id="2_i4jho"]
+
+[node name="InventorySLot" type="TextureButton"]
+texture_normal = ExtResource("1_37v5s")
+script = ExtResource("2_i4jho")
