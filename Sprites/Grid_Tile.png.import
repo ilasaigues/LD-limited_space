@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brxiaw42ngg4n"
-path="res://.godot/imported/gridSlot.png-a2da9f51f43f805e540d4daa026dae1d.ctex"
+uid="uid://b0v5b31f1sryc"
+path="res://.godot/imported/Grid_Tile.png-cc040c4d6fe70f608a9da437654b9091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/gridSlot.png"
-dest_files=["res://.godot/imported/gridSlot.png-a2da9f51f43f805e540d4daa026dae1d.ctex"]
+source_file="res://Sprites/Grid_Tile.png"
+dest_files=["res://.godot/imported/Grid_Tile.png-cc040c4d6fe70f608a9da437654b9091.ctex"]
 
 [params]
 

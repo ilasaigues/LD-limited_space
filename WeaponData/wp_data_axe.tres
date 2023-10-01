@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://1fow4xlplabs"]
+
+[ext_resource type="Script" path="res://Source/ItemData.gd" id="1_rt2y0"]
+[ext_resource type="Texture2D" uid="uid://drwiu7hoqjh1p" path="res://Sprites/axe_atlas.tres" id="2_par6y"]
+
+[resource]
+script = ExtResource("1_rt2y0")
+property = -1
+weaknesses = 0
+dimensions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, -1)])
+texture = ExtResource("2_par6y")
+textureOffset = Vector2(1, -1)

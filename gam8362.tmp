@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ho2ujenxy0g"]
+[gd_scene load_steps=6 format=3 uid="uid://ho2ujenxy0g"]
 
 [ext_resource type="Script" path="res://Source/GridContainer.gd" id="1_k6f25"]
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="2_ph0j7"]
 [ext_resource type="Resource" uid="uid://ds4y6j87krucu" path="res://WeaponData/wp_data_crossbow.tres" id="3_xcrk7"]
 [ext_resource type="Resource" uid="uid://bjr3xwvyspfyw" path="res://WeaponData/wp_data_lance.tres" id="4_vaw5x"]
 [ext_resource type="Script" path="res://Source/LootableSlot.gd" id="5_5ct5s"]
-[ext_resource type="Texture2D" uid="uid://b0v5b31f1sryc" path="res://Sprites/Grid_Tile.png" id="5_17v8b"]
-[ext_resource type="Texture2D" uid="uid://bndy55l080dcd" path="res://Sprites/grid_tile_occupied.png" id="6_8w1aq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,44 +28,26 @@ rows = 5
 all_items = Array[Resource("res://Source/ItemData.gd")]([ExtResource("2_ph0j7"), ExtResource("3_xcrk7"), ExtResource("4_vaw5x")])
 new_item_slots = [NodePath("../NewWeaponSlot"), NodePath("../NewWeaponSlot2"), NodePath("../NewWeaponSlot3")]
 
-[node name="NewWeaponSlot" type="TextureButton" parent="."]
+[node name="NewWeaponSlot" type="Button" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 30.0
-offset_right = 116.0
-offset_bottom = 46.0
-mouse_default_cursor_shape = 2
-action_mode = 0
-texture_normal = ExtResource("5_17v8b")
-texture_pressed = ExtResource("6_8w1aq")
-ignore_texture_size = true
-stretch_mode = 4
+offset_left = 111.0
+offset_top = 32.0
+offset_right = 151.0
+offset_bottom = 45.0
 script = ExtResource("5_5ct5s")
 
-[node name="NewWeaponSlot2" type="TextureButton" parent="."]
+[node name="NewWeaponSlot2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 46.0
-offset_right = 136.0
-offset_bottom = 62.0
-mouse_default_cursor_shape = 2
-action_mode = 0
-texture_normal = ExtResource("5_17v8b")
-texture_pressed = ExtResource("6_8w1aq")
-ignore_texture_size = true
-stretch_mode = 4
+offset_left = 112.0
+offset_top = 51.0
+offset_right = 152.0
+offset_bottom = 64.0
 script = ExtResource("5_5ct5s")
 
-[node name="NewWeaponSlot3" type="TextureButton" parent="."]
+[node name="NewWeaponSlot3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 62.0
-offset_right = 116.0
-offset_bottom = 78.0
-mouse_default_cursor_shape = 2
-action_mode = 0
-texture_normal = ExtResource("5_17v8b")
-texture_pressed = ExtResource("6_8w1aq")
-ignore_texture_size = true
-stretch_mode = 4
+offset_left = 112.0
+offset_top = 72.0
+offset_right = 152.0
+offset_bottom = 85.0
 script = ExtResource("5_5ct5s")
