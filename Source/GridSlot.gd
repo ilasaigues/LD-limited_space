@@ -1,4 +1,5 @@
 extends Control
+class_name GridSlot
 @export var grid_position:Vector2i
 
 var grid_container:GridContainer

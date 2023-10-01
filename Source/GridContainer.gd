@@ -63,33 +63,46 @@ func _process(delta):
 	for node in occupiedNodes:
 		node.modulate=Color.ROSY_BROWN
 	
-	if !selectedItem: return
 	
-	# find which nodes are being hovered over, recolor them
-	var hoveredNodes = []
-	for offset in selectedItem.get_dimensions():
-		var coveredNode = try_get_node(closestSlot.grid_position+offset)
-		if coveredNode:
-			hoveredNodes.append(coveredNode)
-		else:
-			valid_space = false
+	if closestSlot.global_position.distance_to(get_global_mouse_position()) > 8: return
+	if selectedItem: 
+		# find which nodes are being hovered over, recolor them
+		var hoveredNodes = []
+		for offset in selectedItem.get_dimensions():
+			var coveredNode = try_get_node(closestSlot.grid_position+offset)
+			if coveredNode:
+				hoveredNodes.append(coveredNode)
+			else:
+				valid_space = false
 
+		for node in hoveredNodes:
+			node.modulate=Color.YELLOW
+			if occupiedNodes.has(node): # recolor the nodes that are overlapping in red
+				node.modulate=Color.RED
+				valid_space=false
+	
+	
+	if Input.is_action_just_pressed("click"):
+		if selectedItem && valid_space:
+			selectedItem.global_position = closestSlot.global_position
+			selectedItem.is_stored = true
+			selectedItem.stored_center_slot = closestSlot.grid_position
+			storedItems.append(selectedItem)
+			selectedItem=null
+		elif !selectedItem && occupiedNodes.has(closestSlot):
+			var retrievedItem = get_item_in_slot(closestSlot)
+			if retrievedItem:
+				storedItems.erase(retrievedItem)
+				selectedItem = retrievedItem
+			
 
+func get_item_in_slot(slot:GridSlot):
+	for item in storedItems:
+		for slot_id in item.get_dimensions():
+			var pos = slot_id+item.stored_center_slot
+			if try_get_node(pos) == slot: return item
+	return null
 
-	for node in hoveredNodes:
-		node.modulate=Color.YELLOW
-		if occupiedNodes.has(node): # recolor the nodes that are overlapping in red
-			node.modulate=Color.RED
-			valid_space=false
-		
-	if valid_space && Input.is_action_just_pressed("click"):
-		selectedItem.global_position = closestSlot.global_position
-		selectedItem.is_stored = true
-		selectedItem.stored_center_slot = closestSlot.grid_position
-		storedItems.append(selectedItem)
-		selectedItem=null
-		
-		
 func update_selected_transform():
 	if !selectedItem: return
 	# update selected item
