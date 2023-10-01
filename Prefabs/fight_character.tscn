@@ -1,29 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://dykyli755m8um"]
+[gd_scene load_steps=5 format=3 uid="uid://dykyli755m8um"]
 
-[ext_resource type="Texture2D" uid="uid://drwiu7hoqjh1p" path="res://Sprites/axe_atlas.tres" id="1_ijou0"]
-[ext_resource type="Texture2D" uid="uid://bndy55l080dcd" path="res://Sprites/grid_tile_occupied.png" id="2_nn5wq"]
+[ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="1_1v8s2"]
+[ext_resource type="Script" path="res://Source/CharacterInstance.gd" id="1_sdnhk"]
+[ext_resource type="Resource" uid="uid://c388g76hjogcv" path="res://CharacterData/hamiltonData.tres" id="2_7sxih"]
+[ext_resource type="Theme" uid="uid://chtpd8e1vokpw" path="res://Themes/main_theme.tres" id="3_k8nsx"]
 
-[node name="fightCharacter" type="TextureRect"]
-offset_left = 7.0
-offset_top = 13.0
-offset_right = 55.0
-offset_bottom = 61.0
-texture = ExtResource("1_ijou0")
+[node name="fightCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("1_sdnhk")
+base_data = ExtResource("2_7sxih")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.25098, 0.25098, 0.25098, 1)
+[node name="char_sprite" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_right = 42.0
-offset_bottom = 5.0
-texture = ExtResource("2_nn5wq")
-expand_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1v8s2")
+stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(1, 0.25098, 0.25098, 1)
+[node name="hp" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_right = 42.0
-offset_bottom = 5.0
-texture = ExtResource("2_nn5wq")
-expand_mode = 1
+offset_left = 16.0
+offset_top = 34.0
+offset_right = 32.0
+offset_bottom = 37.0
+theme = ExtResource("3_k8nsx")
+max_value = 1.0
+value = 1.0
+show_percentage = false
