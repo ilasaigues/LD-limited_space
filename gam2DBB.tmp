@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ho2ujenxy0g"]
+[gd_scene load_steps=15 format=3 uid="uid://ho2ujenxy0g"]
 
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="2_ph0j7"]
 [ext_resource type="Script" path="res://Source/GridController.gd" id="2_wslhk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Source/NextTurnButton.gd" id="9_lq0h1"]
 [ext_resource type="PackedScene" uid="uid://dykyli755m8um" path="res://Prefabs/fight_character.tscn" id="10_xahc7"]
 [ext_resource type="Resource" uid="uid://qsh377ah5ejp" path="res://CharacterData/louData.tres" id="11_m6tm2"]
+[ext_resource type="Resource" uid="uid://c388g76hjogcv" path="res://CharacterData/hamiltonData.tres" id="12_7iftu"]
 [ext_resource type="Resource" uid="uid://dw7wev02nxlka" path="res://CharacterData/oswaldData.tres" id="13_cw24p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d5s8q"]
@@ -35,7 +36,7 @@ offset_right = 121.0
 offset_bottom = 158.0
 texture = ExtResource("8_61bnt")
 
-[node name="GridController" type="GridContainer" parent="." node_paths=PackedStringArray("new_item_slots")]
+[node name="GridContainer" type="GridContainer" parent="." node_paths=PackedStringArray("new_item_slots")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 86.0
@@ -47,7 +48,7 @@ columns = 8
 script = ExtResource("2_wslhk")
 rows = 5
 all_items = Array[Resource("res://Source/ItemData.gd")]([ExtResource("2_ph0j7"), ExtResource("3_xcrk7"), ExtResource("4_vaw5x")])
-new_item_slots = [NodePath("../lootNodes/NewWeaponSlot"), NodePath("../lootNodes/NewWeaponSlot2"), NodePath("../lootNodes/NewWeaponSlot3"), NodePath("../lootNodes/NewWeaponSlot4")]
+new_item_slots = [NodePath("../lootNodes/NewWeaponSlot"), NodePath("../lootNodes/NewWeaponSlot2"), NodePath("../lootNodes/NewWeaponSlot3")]
 
 [node name="next_turn_button" type="TextureButton" parent="." node_paths=PackedStringArray("grid")]
 modulate = Color(0.188235, 0.133333, 0.741176, 1)
@@ -60,7 +61,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 stretch_mode = 0
 script = ExtResource("9_lq0h1")
-grid = NodePath("../GridController")
+grid = NodePath("../GridContainer")
 
 [node name="Label" type="Label" parent="next_turn_button"]
 modulate = Color(0, 0, 0.443137, 1)
@@ -81,24 +82,10 @@ offset_bottom = -56.0
 
 [node name="NewWeaponSlot" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 81.0
-offset_right = 146.0
-offset_bottom = 97.0
-mouse_default_cursor_shape = 2
-action_mode = 0
-texture_normal = ExtResource("5_17v8b")
-texture_pressed = ExtResource("6_8w1aq")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("5_5ct5s")
-
-[node name="NewWeaponSlot3" type="TextureButton" parent="lootNodes"]
-layout_mode = 0
-offset_left = 156.0
-offset_top = 81.0
-offset_right = 172.0
-offset_bottom = 97.0
+offset_left = 135.0
+offset_top = 97.0
+offset_right = 151.0
+offset_bottom = 113.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("5_17v8b")
@@ -109,10 +96,10 @@ script = ExtResource("5_5ct5s")
 
 [node name="NewWeaponSlot2" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 81.0
-offset_right = 198.0
-offset_bottom = 97.0
+offset_left = 205.0
+offset_top = 82.0
+offset_right = 221.0
+offset_bottom = 98.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("5_17v8b")
@@ -121,12 +108,12 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_5ct5s")
 
-[node name="NewWeaponSlot4" type="TextureButton" parent="lootNodes"]
+[node name="NewWeaponSlot3" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 81.0
-offset_right = 223.0
-offset_bottom = 97.0
+offset_left = 169.0
+offset_top = 58.0
+offset_right = 185.0
+offset_bottom = 74.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("5_17v8b")
@@ -155,34 +142,12 @@ offset_left = 11.0
 offset_top = 0.0
 offset_right = 59.0
 offset_bottom = 48.0
+base_data = ExtResource("12_7iftu")
 
 [node name="fightCharacter3" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 84.0
 offset_right = 59.0
-offset_bottom = 132.0
-base_data = ExtResource("13_cw24p")
-
-[node name="fightCharacter4" parent="Combat" instance=ExtResource("10_xahc7")]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 42.0
-offset_right = 105.0
-offset_bottom = 90.0
-base_data = ExtResource("11_m6tm2")
-
-[node name="fightCharacter5" parent="Combat" instance=ExtResource("10_xahc7")]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 0.0
-offset_right = 105.0
-offset_bottom = 48.0
-
-[node name="fightCharacter6" parent="Combat" instance=ExtResource("10_xahc7")]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 84.0
-offset_right = 105.0
 offset_bottom = 132.0
 base_data = ExtResource("13_cw24p")

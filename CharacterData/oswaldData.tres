@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dw7wev02nxlka"]
+
+[ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_jrdup"]
+[ext_resource type="Texture2D" uid="uid://cdos0im0hdyas" path="res://Sprites/Characters/Oswald.png" id="2_m63un"]
+
+[resource]
+script = ExtResource("1_jrdup")
+maxHP = 100
+texture = ExtResource("2_m63un")
