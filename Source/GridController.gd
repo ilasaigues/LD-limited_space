@@ -1,5 +1,5 @@
 extends GridContainer
-
+class_name GridController
 @export var rows:int
 @export var all_items:Array[ItemData]
 
@@ -93,9 +93,6 @@ func _process(delta):
 			if retrievedItem:
 				storedItems.erase(retrievedItem)
 				selectedItem = retrievedItem
-				
-	if Input.is_action_just_pressed("ui_accept"):
-		next_turn()
 
 func next_turn():
 	for item_a in storedItems:
