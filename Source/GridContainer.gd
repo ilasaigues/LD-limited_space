@@ -5,6 +5,11 @@ extends GridContainer
 
 @export var new_item_slots:Array[LootableSlot]
 
+@export var default_color : Color 
+@export var hovered_color : Color 
+@export var occupied_color : Color 
+@export var overlap_color : Color 
+
 var slot_prefab = preload("res://Prefabs/inventory_slot.tscn")
 var grid = []
 
@@ -45,7 +50,7 @@ func _process(delta):
 	# find nearest slot to mouse
 	for column in grid:
 		for node in column:
-			node.modulate=Color.SLATE_GRAY
+			node.modulate = default_color
 			if closestSlot == null: closestSlot = node
 			elif closestSlot.global_position.distance_to(get_global_mouse_position()) > node.global_position.distance_to(get_global_mouse_position()):
 				closestSlot = node
@@ -61,7 +66,7 @@ func _process(delta):
 			if slot!=null:
 				occupiedNodes.append(slot)
 	for node in occupiedNodes:
-		node.modulate=Color.ROSY_BROWN
+		node.modulate=occupied_color
 	
 	if !selectedItem: return
 	
@@ -77,9 +82,9 @@ func _process(delta):
 
 
 	for node in hoveredNodes:
-		node.modulate=Color.YELLOW
+		node.modulate = hovered_color
 		if occupiedNodes.has(node): # recolor the nodes that are overlapping in red
-			node.modulate=Color.RED
+			node.modulate = overlap_color
 			valid_space=false
 		
 	if valid_space && Input.is_action_just_pressed("click"):

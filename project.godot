@@ -19,8 +19,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=160
 window/size/viewport_height=90
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/resizable=false
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
 [input]
@@ -44,3 +45,4 @@ click={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.185868, 0.166519, 0.241996, 1)

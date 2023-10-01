@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw5xjeqg7cd65"]
 
 [ext_resource type="Script" path="res://Source/GridSlot.gd" id="2_i4jho"]
-[ext_resource type="Texture2D" uid="uid://b0v5b31f1sryc" path="res://Sprites/Grid_Tile.png" id="2_vshgr"]
+[ext_resource type="Texture2D" uid="uid://bndy55l080dcd" path="res://Sprites/grid_tile_occupied.png" id="2_vb1a7"]
 
 [node name="Container" type="Control"]
 custom_minimum_size = Vector2(8, 8)
@@ -19,4 +19,4 @@ offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
-texture = ExtResource("2_vshgr")
+texture = ExtResource("2_vb1a7")
