@@ -5,8 +5,7 @@
 
 [resource]
 script = ExtResource("1_vxb62")
-property = -1
-weaknesses = 0
+type = 0
 dimensions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, -1)])
 texture = ExtResource("2_han14")
-textureOffset = Vector2(0, 4)
+textureOffset = Vector2(0, 5)

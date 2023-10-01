@@ -81,7 +81,6 @@ func _process(delta):
 				node.modulate=Color.RED
 				valid_space=false
 	
-	
 	if Input.is_action_just_pressed("click"):
 		if selectedItem && valid_space:
 			selectedItem.global_position = closestSlot.global_position
@@ -94,6 +93,29 @@ func _process(delta):
 			if retrievedItem:
 				storedItems.erase(retrievedItem)
 				selectedItem = retrievedItem
+				
+	if Input.is_action_just_pressed("ui_accept"):
+		next_turn()
+
+func next_turn():
+	for item_a in storedItems:
+		for item_b in storedItems:
+			if item_a == item_b: continue
+			# we only check if a has an effect on b, the opposite will happen eventually
+			if item_a.property & item_b.base_data.weaknesses == 0: continue
+			var shortestDistance = INF
+
+			for pos_a in item_a.get_global_dimensions():
+				for pos_b in item_b.get_global_dimensions():
+					if (pos_b-pos_a).length()  < shortestDistance:
+						shortestDistance = (pos_b-pos_a).length()
+			if shortestDistance < 2:
+				item_b.queue_free()
+				storedItems.erase(item_b)
+				
+				
+				
+			# then we check if they are adjacent
 			
 
 func get_item_in_slot(slot:GridSlot):
@@ -113,7 +135,6 @@ func update_selected_transform():
 		selectedItem.Rotate(false)
 
 func try_get_node(id:Vector2i):
-	print(id)
 	if id.x >=0 && id.x < grid.size() && id.y >=0 && id.y < grid[id.x].size():
 		return grid[id.x][id.y]
 	return null
