@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ho2ujenxy0g"]
+[gd_scene load_steps=19 format=3 uid="uid://ho2ujenxy0g"]
 
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="2_ph0j7"]
 [ext_resource type="Script" path="res://Source/GridManager.gd" id="2_tscn2"]
@@ -7,7 +7,9 @@
 [ext_resource type="Resource" uid="uid://bjr3xwvyspfyw" path="res://WeaponData/wp_data_staff.tres" id="5_tv7c0"]
 [ext_resource type="Texture2D" uid="uid://bndy55l080dcd" path="res://Sprites/grid_tile_occupied.png" id="6_8w1aq"]
 [ext_resource type="Resource" uid="uid://b05wq7r3pnb6q" path="res://WeaponData/wp_data_dagger.tres" id="6_bw28k"]
+[ext_resource type="Resource" uid="uid://b57e5c48lcj57" path="res://WeaponData/wp_data_flail.tres" id="7_h1fdn"]
 [ext_resource type="Texture2D" uid="uid://cndeb4s86al7l" path="res://Backpack background.png" id="8_61bnt"]
+[ext_resource type="Resource" uid="uid://b70pvmwdbophd" path="res://WeaponData/wp_data_scroll.tres" id="8_k25e1"]
 [ext_resource type="Script" path="res://Source/LootableItemSlot.gd" id="9_kvl83"]
 [ext_resource type="Script" path="res://Source/NextTurnButton.gd" id="9_lq0h1"]
 [ext_resource type="PackedScene" uid="uid://dykyli755m8um" path="res://Prefabs/fight_character.tscn" id="10_xahc7"]
@@ -49,7 +51,7 @@ theme_override_constants/v_separation = 1
 columns = 8
 script = ExtResource("2_tscn2")
 rows = 5
-all_items = Array[Resource("res://Source/ItemData.gd")]([ExtResource("2_ph0j7"), ExtResource("3_xcrk7"), ExtResource("5_tv7c0"), ExtResource("6_bw28k")])
+all_items = Array[Resource("res://Source/ItemData.gd")]([ExtResource("2_ph0j7"), ExtResource("3_xcrk7"), ExtResource("5_tv7c0"), ExtResource("6_bw28k"), ExtResource("7_h1fdn"), ExtResource("8_k25e1")])
 new_item_slots = [NodePath("../lootNodes/NewWeaponSlot"), NodePath("../lootNodes/NewWeaponSlot2"), NodePath("../lootNodes/NewWeaponSlot3"), NodePath("../lootNodes/NewWeaponSlot4")]
 usable_item_slots = [NodePath("../Combat/RequestSlot1"), NodePath("../Combat/RequestSlot2"), NodePath("../Combat/RequestSlot3")]
 

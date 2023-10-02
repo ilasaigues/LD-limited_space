@@ -3,6 +3,9 @@ class_name ItemInstance
 var base_data:ItemData
 var grid_position:Vector2i
 
+@export var base_display:TextureRect
+@export var glow_display:TextureRect
+
 var rotationIndex = 0
 
 var is_stored:bool = false
@@ -14,8 +17,10 @@ var property:SPECIAL_PROPERTY = SPECIAL_PROPERTY.None
 
 func Init(data:ItemData):
 	base_data = data
-	get_node("Texture").position += base_data.textureOffset;
-	get_node("Texture").texture = base_data.texture
+	base_display.position += base_data.textureOffset
+	base_display.texture = base_data.texture
+	glow_display.position += base_data.textureOffset
+	glow_display.texture = base_data.glow_texture
 	property = randi()%4
 	if property == 3: property= 4
 	match property:

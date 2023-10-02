@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bjr3xwvyspfyw"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bjr3xwvyspfyw"]
 
+[ext_resource type="Texture2D" uid="uid://b2ohrrglymmx0" path="res://Sprites/Items/wpn_staff_glow.tres" id="1_eioh0"]
 [ext_resource type="Script" path="res://Source/ItemData.gd" id="1_fslqy"]
 [ext_resource type="Texture2D" uid="uid://cjdgyx2tryw3r" path="res://Sprites/Items/wpn_staff_base.tres" id="2_u0feb"]
 
@@ -9,4 +10,5 @@ weaknesses = 0
 type = 0
 dimensions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, -1)])
 texture = ExtResource("2_u0feb")
+glow_texture = ExtResource("1_eioh0")
 textureOffset = Vector2(0, 5)

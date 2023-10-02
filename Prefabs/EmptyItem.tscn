@@ -8,7 +8,7 @@
 atlas = SubResource("CompressedTexture2D_yki6k")
 region = Rect2(0, 0, 48, 48)
 
-[node name="EmptyItem" type="Control"]
+[node name="EmptyItem" type="Control" node_paths=PackedStringArray("base_display", "glow_display")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,8 +17,27 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_6hpxw")
+base_display = NodePath("base_texture")
+glow_display = NodePath("glow_texture")
 
-[node name="Texture" type="TextureRect" parent="."]
+[node name="glow_texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -91.5
+offset_right = -96.0
+offset_bottom = -43.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_iivbn")
+
+[node name="base_texture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

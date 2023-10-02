@@ -10,7 +10,7 @@ func Initialize(grid:GridManager):
 func set_item(item:ItemInstance):
 	storedItem = item	
 	if storedItem:
-		item.position = self.get_global_rect().position + self.get_global_rect().size/2
+		item.position = self.get_global_rect().position + self.get_global_rect().size/2  -item.base_data.textureOffset
 
 
 func _pressed():
