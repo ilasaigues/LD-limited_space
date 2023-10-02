@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://bmnf8gungi1kr"]
+
+[ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_kny4q"]
+[ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="2_4tykw"]
+
+[resource]
+script = ExtResource("1_kny4q")
+maxHP = 10
+texture = ExtResource("2_4tykw")
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([])
+animationName = "orc"
+element = 4

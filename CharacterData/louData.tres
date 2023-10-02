@@ -9,3 +9,5 @@ script = ExtResource("1_vcd0j")
 maxHP = 8
 texture = ExtResource("2_2q0dr")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_wegyd")])
+animationName = "lou"
+element = 0
