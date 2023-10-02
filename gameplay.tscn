@@ -143,6 +143,13 @@ offset_right = 240.0
 offset_bottom = 135.0
 mouse_filter = 2
 
+[node name="fightCharacter2" parent="Combat" instance=ExtResource("10_xahc7")]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 26.0
+offset_right = 67.0
+offset_bottom = 74.0
+
 [node name="fightCharacter" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
 offset_left = 19.0
@@ -150,13 +157,6 @@ offset_top = 60.0
 offset_right = 67.0
 offset_bottom = 108.0
 base_data = ExtResource("11_m6tm2")
-
-[node name="fightCharacter2" parent="Combat" instance=ExtResource("10_xahc7")]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 26.0
-offset_right = 67.0
-offset_bottom = 74.0
 
 [node name="fightCharacter3" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
@@ -231,6 +231,8 @@ texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("grid")]
+[node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("grid", "player_team", "enemy_team")]
 script = ExtResource("13_m78ye")
 grid = NodePath("../GridController")
+player_team = [NodePath("../Combat/fightCharacter2"), NodePath("../Combat/fightCharacter"), NodePath("../Combat/fightCharacter3")]
+enemy_team = [NodePath("../Combat/fightCharacter5"), NodePath("../Combat/fightCharacter4"), NodePath("../Combat/fightCharacter6")]

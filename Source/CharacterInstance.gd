@@ -4,6 +4,9 @@ class_name CharacterInstance
 
 var hp:int
 
+func is_alive():
+	return hp>0
+
 func _ready():
 	$char_sprite.texture = base_data.texture
 	hp = base_data.maxHP

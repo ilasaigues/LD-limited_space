@@ -15,12 +15,9 @@ offset_bottom = 16.0
 script = ExtResource("1_sdnhk")
 base_data = ExtResource("2_7sxih")
 
-[node name="char_sprite" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
+[node name="char_sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
 texture = ExtResource("1_1v8s2")
-stretch_mode = 2
 
 [node name="hp" type="ProgressBar" parent="."]
 layout_mode = 0

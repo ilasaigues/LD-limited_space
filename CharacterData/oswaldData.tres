@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_jrdup")
-maxHP = 100
+maxHP = 15
 texture = ExtResource("2_m63un")
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([])
