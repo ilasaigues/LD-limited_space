@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://dd1qwqr6nrmfp"]
+
+[ext_resource type="Resource" uid="uid://ds4y6j87krucu" path="res://WeaponData/wp_data_crossbow.tres" id="1_7f1hy"]
+[ext_resource type="Script" path="res://Source/CharacterData.gd" id="2_ejc1q"]
+[ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="3_3qir5"]
+
+[resource]
+script = ExtResource("2_ejc1q")
+maxHP = 10
+texture = ExtResource("3_3qir5")
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_7f1hy")])
+animationName = "hamilton"
