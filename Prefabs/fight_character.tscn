@@ -240,6 +240,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [51, 52, 53, 54, 55, 56, 57]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.583333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_axpq8"]
 resource_name = "death_lou"
@@ -256,6 +268,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [79, 80, 81, 82, 83, 84]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_05158"]
@@ -290,6 +314,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [21, 22, 23, 24, 25, 26, 27, 28, 29]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_g3167"]
@@ -416,6 +452,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 30, 31, 32, 33, 34, 35]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_elgs0"]
 resource_name = "spawn_lou"
@@ -432,6 +480,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 58, 59, 60, 61, 62, 63]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_balbc"]
@@ -466,6 +526,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ksrw1"]
@@ -898,7 +970,7 @@ states/walk_lou/position = Vector2(-177, -307)
 states/walk_oswald/node = SubResource("AnimationNodeAnimation_cp63w")
 states/walk_oswald/position = Vector2(284, -113)
 transitions = ["spawn_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_novea"), "walk_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_j7e4t"), "damage_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_elp7l"), "attack_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_43rrj"), "idle_oswald", "death_oswald", SubResource("AnimationNodeStateMachineTransition_487ke"), "idle_oswald", "walk_oswald", SubResource("AnimationNodeStateMachineTransition_3ihk1"), "idle_oswald", "attack_oswald", SubResource("AnimationNodeStateMachineTransition_eq3lo"), "idle_oswald", "damage_oswald", SubResource("AnimationNodeStateMachineTransition_yohqy"), "Start", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_4kutm"), "death_oswald", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_fhtlb"), "Start", "spawn_lou", SubResource("AnimationNodeStateMachineTransition_6sbi3"), "spawn_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_le884"), "idle_lou", "attack_lou", SubResource("AnimationNodeStateMachineTransition_clg85"), "idle_lou", "walk_lou", SubResource("AnimationNodeStateMachineTransition_tq40n"), "idle_lou", "damage_lou", SubResource("AnimationNodeStateMachineTransition_b33cs"), "idle_lou", "death_lou", SubResource("AnimationNodeStateMachineTransition_hrjud"), "attack_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_q34y4"), "walk_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_53lsp"), "damage_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_2f6wo"), "death_lou", "spawn_lou", SubResource("AnimationNodeStateMachineTransition_d4whd"), "spawn_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_ljaxw"), "idle_hamilton", "death_hamilton", SubResource("AnimationNodeStateMachineTransition_aq42g"), "death_hamilton", "spawn_hamilton", SubResource("AnimationNodeStateMachineTransition_pa76n"), "idle_hamilton", "attack_hamilton", SubResource("AnimationNodeStateMachineTransition_322mp"), "idle_hamilton", "walk_hamilton", SubResource("AnimationNodeStateMachineTransition_lllak"), "idle_hamilton", "damage_hamilton", SubResource("AnimationNodeStateMachineTransition_urrpt"), "attack_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_wp1p3"), "walk_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_uyqgc"), "damage_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_771e5"), "Start", "spawn_hamilton", SubResource("AnimationNodeStateMachineTransition_o2s1k"), "Start", "spawn_orc", SubResource("AnimationNodeStateMachineTransition_qmtsh"), "spawn_orc", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_s04aq"), "spawn_orc", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_loj6f"), "spawn_orc", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_y1d27"), "attack_orc_fire", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_0rndd"), "idle_orc_fire", "attack_orc_fire", SubResource("AnimationNodeStateMachineTransition_n5bo5"), "idle_orc_ice", "attack_orc_ice", SubResource("AnimationNodeStateMachineTransition_2x64s"), "idle_orc_poison", "attack_orc_poison", SubResource("AnimationNodeStateMachineTransition_i5il1"), "attack_orc_ice", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_lirl7"), "attack_orc_poison", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_ggnor"), "idle_orc_fire", "death_orc", SubResource("AnimationNodeStateMachineTransition_x805l"), "idle_orc_ice", "death_orc", SubResource("AnimationNodeStateMachineTransition_sbodo"), "idle_orc_poison", "death_orc", SubResource("AnimationNodeStateMachineTransition_0yjqp"), "idle_orc_ice", "damage_orc_ice", SubResource("AnimationNodeStateMachineTransition_18twt"), "damage_orc_ice", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_ui6ri"), "idle_orc_poison", "damage_orc_poison", SubResource("AnimationNodeStateMachineTransition_xaijc"), "idle_orc_fire", "damage_orc_fire", SubResource("AnimationNodeStateMachineTransition_ky4xb"), "damage_orc_fire", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_vbw3w"), "damage_orc_poison", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_xgpe3")]
-graph_offset = Vector2(-543, 202)
+graph_offset = Vector2(-534, -260)
 
 [node name="fightCharacter" type="Control"]
 layout_mode = 3
