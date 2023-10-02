@@ -1,6 +1,7 @@
 extends TextureButton
+class_name NextTurnButton
 
-@export var grid:GridController
+@export var turn_manager:TurnManager
 
 func _pressed():
-	grid.next_turn()
+	turn_manager.next_turn()

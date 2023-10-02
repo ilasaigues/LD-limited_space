@@ -7,3 +7,4 @@
 script = ExtResource("1_21l8l")
 maxHP = 100
 texture = ExtResource("2_04xli")
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([])

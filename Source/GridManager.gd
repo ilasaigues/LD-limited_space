@@ -1,9 +1,10 @@
 extends GridContainer
-class_name GridController
+class_name GridManager
 @export var rows:int
 @export var all_items:Array[ItemData]
 
 @export var new_item_slots:Array[LootableSlot]
+
 
 var slot_prefab = preload("res://Prefabs/inventory_slot.tscn")
 var grid = []
@@ -33,9 +34,8 @@ func _ready():
 	for slot in new_item_slots:
 		slot.Initialize(self)
 		var newItem = get_new_random_item()
-		var slotPos = slot.get_global_rect().position+slot.get_global_rect().size/2
 		slot.set_item(newItem)
-		newItem.position = slotPos
+
 
 func _process(delta):
 	print("----------")
@@ -147,3 +147,6 @@ func on_loot_slot_pressed(slot:LootableSlot):
 	if slot.storedItem :
 		selectedItem = slot.storedItem
 		slot.set_item(null)
+	else:
+		slot.set_item(selectedItem)
+		selectedItem = null

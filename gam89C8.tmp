@@ -1,18 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://ho2ujenxy0g"]
+[gd_scene load_steps=14 format=3 uid="uid://ho2ujenxy0g"]
 
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="2_ph0j7"]
-[ext_resource type="Script" path="res://Source/GridManager.gd" id="2_tscn2"]
+[ext_resource type="Script" path="res://Source/GridController.gd" id="2_wslhk"]
 [ext_resource type="Resource" uid="uid://ds4y6j87krucu" path="res://WeaponData/wp_data_crossbow.tres" id="3_xcrk7"]
 [ext_resource type="Resource" uid="uid://bjr3xwvyspfyw" path="res://WeaponData/wp_data_lance.tres" id="4_vaw5x"]
+[ext_resource type="Script" path="res://Source/LootableSlot.gd" id="5_5ct5s"]
 [ext_resource type="Texture2D" uid="uid://b0v5b31f1sryc" path="res://Sprites/Grid_Tile.png" id="5_17v8b"]
 [ext_resource type="Texture2D" uid="uid://bndy55l080dcd" path="res://Sprites/grid_tile_occupied.png" id="6_8w1aq"]
 [ext_resource type="Texture2D" uid="uid://cndeb4s86al7l" path="res://Backpack background.png" id="8_61bnt"]
-[ext_resource type="Script" path="res://Source/LootableItemSlot.gd" id="9_kvl83"]
 [ext_resource type="Script" path="res://Source/NextTurnButton.gd" id="9_lq0h1"]
 [ext_resource type="PackedScene" uid="uid://dykyli755m8um" path="res://Prefabs/fight_character.tscn" id="10_xahc7"]
 [ext_resource type="Resource" uid="uid://qsh377ah5ejp" path="res://CharacterData/louData.tres" id="11_m6tm2"]
 [ext_resource type="Resource" uid="uid://dw7wev02nxlka" path="res://CharacterData/oswaldData.tres" id="13_cw24p"]
-[ext_resource type="Script" path="res://Source/TurnManager.gd" id="13_m78ye"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d5s8q"]
 font_size = 12
@@ -45,12 +44,12 @@ offset_bottom = 128.0
 theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 1
 columns = 8
-script = ExtResource("2_tscn2")
+script = ExtResource("2_wslhk")
 rows = 5
 all_items = Array[Resource("res://Source/ItemData.gd")]([ExtResource("2_ph0j7"), ExtResource("3_xcrk7"), ExtResource("4_vaw5x")])
 new_item_slots = [NodePath("../lootNodes/NewWeaponSlot"), NodePath("../lootNodes/NewWeaponSlot2"), NodePath("../lootNodes/NewWeaponSlot3"), NodePath("../lootNodes/NewWeaponSlot4")]
 
-[node name="next_turn_button" type="TextureButton" parent="." node_paths=PackedStringArray("turn_manager")]
+[node name="next_turn_button" type="TextureButton" parent="." node_paths=PackedStringArray("grid")]
 modulate = Color(0.188235, 0.133333, 0.741176, 1)
 layout_mode = 0
 offset_left = 153.0
@@ -61,7 +60,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 stretch_mode = 0
 script = ExtResource("9_lq0h1")
-turn_manager = NodePath("../TurnManager")
+grid = NodePath("../GridController")
 
 [node name="Label" type="Label" parent="next_turn_button"]
 modulate = Color(0, 0, 0.443137, 1)
@@ -92,7 +91,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("9_kvl83")
+script = ExtResource("5_5ct5s")
 
 [node name="NewWeaponSlot3" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
@@ -106,7 +105,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("9_kvl83")
+script = ExtResource("5_5ct5s")
 
 [node name="NewWeaponSlot2" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
@@ -120,7 +119,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("9_kvl83")
+script = ExtResource("5_5ct5s")
 
 [node name="NewWeaponSlot4" type="TextureButton" parent="lootNodes"]
 layout_mode = 0
@@ -134,7 +133,7 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
-script = ExtResource("9_kvl83")
+script = ExtResource("5_5ct5s")
 
 [node name="Combat" type="Control" parent="."]
 anchors_preset = 0
@@ -145,48 +144,48 @@ mouse_filter = 2
 
 [node name="fightCharacter" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 60.0
-offset_right = 67.0
-offset_bottom = 108.0
+offset_left = 11.0
+offset_top = 50.0
+offset_right = 59.0
+offset_bottom = 98.0
 base_data = ExtResource("11_m6tm2")
 
 [node name="fightCharacter2" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 26.0
-offset_right = 67.0
-offset_bottom = 74.0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 64.0
 
 [node name="fightCharacter3" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 94.0
-offset_right = 67.0
-offset_bottom = 142.0
+offset_left = 11.0
+offset_top = 84.0
+offset_right = 59.0
+offset_bottom = 132.0
 base_data = ExtResource("13_cw24p")
 
 [node name="fightCharacter4" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 60.0
-offset_right = 113.0
-offset_bottom = 108.0
+offset_left = 57.0
+offset_top = 50.0
+offset_right = 105.0
+offset_bottom = 98.0
 base_data = ExtResource("11_m6tm2")
 
 [node name="fightCharacter5" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 26.0
-offset_right = 113.0
-offset_bottom = 74.0
+offset_left = 57.0
+offset_top = 16.0
+offset_right = 105.0
+offset_bottom = 64.0
 
 [node name="fightCharacter6" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 94.0
-offset_right = 113.0
-offset_bottom = 142.0
+offset_left = 57.0
+offset_top = 84.0
+offset_right = 105.0
+offset_bottom = 132.0
 base_data = ExtResource("13_cw24p")
 
 [node name="RequestSlot1" type="TextureButton" parent="Combat"]
@@ -230,7 +229,3 @@ texture_normal = ExtResource("5_17v8b")
 texture_pressed = ExtResource("6_8w1aq")
 ignore_texture_size = true
 stretch_mode = 4
-
-[node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("grid")]
-script = ExtResource("13_m78ye")
-grid = NodePath("../GridController")
