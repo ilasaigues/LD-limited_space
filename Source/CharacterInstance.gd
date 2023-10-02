@@ -8,6 +8,8 @@ var hp:int
 func is_alive():
 	return hp>0
 
+var is_animating:bool = false
+
 func _ready():
 	#$char_sprite.texture = base_data.texture
 	if base_data.animationName != "":
@@ -31,8 +33,19 @@ func _ready():
 func TakeDamage(damage:int):
 	hp-=damage
 	UpdateHealthDisplay()
+	if hp <= 0:
+		$AnimationTree["parameters/conditions/death"] = true
 	
 func UpdateHealthDisplay():
 	$hp.value =hp as float / base_data.maxHP
 
-
+func attack(target:CharacterInstance):
+	$AnimationTree["parameters/conditions/attack"] = true
+	is_animating=true
+	target.TakeDamage(3)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	$AnimationTree["parameters/conditions/attack"] = false
+	
+func _on_animation_finished(anim_name):
+	is_animating=false
