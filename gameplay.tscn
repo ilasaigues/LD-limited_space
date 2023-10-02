@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ho2ujenxy0g"]
+[gd_scene load_steps=22 format=3 uid="uid://ho2ujenxy0g"]
 
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="2_ph0j7"]
 [ext_resource type="Script" path="res://Source/GridManager.gd" id="2_tscn2"]
@@ -15,7 +15,10 @@
 [ext_resource type="Resource" uid="uid://dw7wev02nxlka" path="res://CharacterData/oswaldData.tres" id="13_cw24p"]
 [ext_resource type="Script" path="res://Source/TurnManager.gd" id="13_m78ye"]
 [ext_resource type="Script" path="res://Source/UsableItemSlot.gd" id="13_rygyf"]
+[ext_resource type="Resource" uid="uid://dd1qwqr6nrmfp" path="res://CharacterData/iceOrcData.tres" id="14_ro2dq"]
+[ext_resource type="Resource" uid="uid://i2fpmi2op0h5" path="res://CharacterData/fireOrcData.tres" id="15_qj22f"]
 [ext_resource type="Script" path="res://AudioManager.gd" id="16_lt51q"]
+[ext_resource type="Resource" uid="uid://bmnf8gungi1kr" path="res://CharacterData/acidOrcData.tres" id="16_sn110"]
 [ext_resource type="AudioStream" uid="uid://c1ksutk4w6v41" path="res://Audio/VGM/stage 1.wav" id="17_yowxo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d5s8q"]
@@ -180,7 +183,7 @@ offset_left = 65.0
 offset_top = 60.0
 offset_right = 113.0
 offset_bottom = 108.0
-base_data = ExtResource("11_m6tm2")
+base_data = ExtResource("14_ro2dq")
 
 [node name="fightCharacter5" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
@@ -188,6 +191,7 @@ offset_left = 65.0
 offset_top = 26.0
 offset_right = 113.0
 offset_bottom = 74.0
+base_data = ExtResource("15_qj22f")
 
 [node name="fightCharacter6" parent="Combat" instance=ExtResource("10_xahc7")]
 layout_mode = 0
@@ -195,7 +199,7 @@ offset_left = 65.0
 offset_top = 94.0
 offset_right = 113.0
 offset_bottom = 142.0
-base_data = ExtResource("13_cw24p")
+base_data = ExtResource("16_sn110")
 
 [node name="RequestSlot1" type="TextureButton" parent="Combat"]
 self_modulate = Color(0.501961, 0.25098, 0.25098, 1)
