@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dw7wev02nxlka"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://dw7wev02nxlka"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_jrdup"]
+[ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="1_jxw56"]
 [ext_resource type="Texture2D" uid="uid://cdos0im0hdyas" path="res://Sprites/Characters/Oswald.png" id="2_m63un"]
 
 [resource]
 script = ExtResource("1_jrdup")
 maxHP = 15
 texture = ExtResource("2_m63un")
-compatibleItems = Array[Resource("res://Source/ItemData.gd")]([])
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_jxw56")])

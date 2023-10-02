@@ -4,6 +4,7 @@ class_name GridManager
 @export var all_items:Array[ItemData]
 
 @export var new_item_slots:Array[LootableSlot]
+@export var usable_item_slots:Array[UsableItemSlot]
 
 
 var slot_prefab = preload("res://Prefabs/inventory_slot.tscn")
@@ -35,6 +36,9 @@ func _ready():
 		slot.Initialize(self)
 		var newItem = get_new_random_item()
 		slot.set_item(newItem)
+		
+	for slot in usable_item_slots:
+		slot.Initialize(self)
 
 
 func _process(delta):
@@ -150,3 +154,12 @@ func on_loot_slot_pressed(slot:LootableSlot):
 	else:
 		slot.set_item(selectedItem)
 		selectedItem = null
+
+func on_equip_slot_pressed(slot:UsableItemSlot):
+	if slot.storedItem :
+		selectedItem = slot.storedItem
+		slot.set_item(null)
+	else:
+		if(slot.characterData.compatibleItems.has(selectedItem.base_data)):
+			slot.set_item(selectedItem)
+			selectedItem = null

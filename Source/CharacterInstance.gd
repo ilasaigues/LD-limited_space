@@ -1,6 +1,7 @@
 extends Node
 class_name CharacterInstance
 @export var base_data:CharacterData
+@export var item_slot:UsableItemSlot
 
 var hp:int
 
@@ -10,6 +11,8 @@ func is_alive():
 func _ready():
 	$char_sprite.texture = base_data.texture
 	hp = base_data.maxHP
+	if item_slot:
+		item_slot.SetCharacterData(base_data)
 
 func TakeDamage(damage:int):
 	hp-=damage
