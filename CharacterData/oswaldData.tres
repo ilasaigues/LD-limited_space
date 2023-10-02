@@ -10,3 +10,4 @@ maxHP = 15
 texture = ExtResource("2_m63un")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_jxw56")])
 animationName = "oswald"
+element = 0

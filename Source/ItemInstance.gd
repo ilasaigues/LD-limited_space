@@ -25,11 +25,11 @@ func Init(data:ItemData):
 	if property == 3: property= 4
 	match property:
 		SPECIAL_PROPERTY.Fire:
-			modulate = Color.ORANGE_RED
+			glow_display.modulate = Color.ORANGE_RED
 		SPECIAL_PROPERTY.Ice:
-			modulate = Color.CYAN
+			glow_display.modulate = Color.CYAN
 		SPECIAL_PROPERTY.Acid:
-			modulate = Color.DARK_GREEN
+			glow_display.modulate = Color.DARK_GREEN
 
 func Rotate(clockwise:bool):
 	rotationIndex = (rotationIndex +( 3 if clockwise else 1)) % 4
