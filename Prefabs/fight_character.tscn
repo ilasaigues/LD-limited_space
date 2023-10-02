@@ -1,9 +1,213 @@
-[gd_scene load_steps=5 format=3 uid="uid://dykyli755m8um"]
+[gd_scene load_steps=30 format=3 uid="uid://dykyli755m8um"]
 
-[ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="1_1v8s2"]
 [ext_resource type="Script" path="res://Source/CharacterInstance.gd" id="1_sdnhk"]
 [ext_resource type="Resource" uid="uid://c388g76hjogcv" path="res://CharacterData/hamiltonData.tres" id="2_7sxih"]
 [ext_resource type="Theme" uid="uid://chtpd8e1vokpw" path="res://Themes/main_theme.tres" id="3_k8nsx"]
+[ext_resource type="Texture2D" uid="uid://bhvnj8n5o0tu8" path="res://Sprites/Characters/character_atlas.png" id="3_mmec3"]
+
+[sub_resource type="Animation" id="Animation_gocfl"]
+resource_name = "idle_oswald"
+length = 0.6667
+loop_mode = 1
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 8]
+}
+
+[sub_resource type="Animation" id="Animation_gnw1n"]
+resource_name = "spawn_oswald"
+length = 0.6667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_uxjrg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_3atsi"]
+resource_name = "walk_oswald"
+length = 1.33334
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 12, 13, 10, 11, 12, 13, 14, 15, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_mcruf"]
+resource_name = "attack_oswald"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 16, 17, 18, 8]
+}
+
+[sub_resource type="Animation" id="Animation_bxhpj"]
+resource_name = "damage_oswald"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [19, 20, 19, 20, 19, 20]
+}
+
+[sub_resource type="Animation" id="Animation_qmxte"]
+resource_name = "death_oswald"
+length = 0.750008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 27, 28, 29]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3r80"]
+_data = {
+"RESET": SubResource("Animation_uxjrg"),
+"attack_oswald": SubResource("Animation_mcruf"),
+"damage_oswald": SubResource("Animation_bxhpj"),
+"death_oswald": SubResource("Animation_qmxte"),
+"idle_oswald": SubResource("Animation_gocfl"),
+"spawn_oswald": SubResource("Animation_gnw1n"),
+"walk_oswald": SubResource("Animation_3atsi")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b6qdc"]
+animation = &"attack_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gwcqu"]
+animation = &"damage_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b7ipi"]
+animation = &"death_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2k7ft"]
+animation = &"idle_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hukpg"]
+animation = &"spawn_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cp63w"]
+animation = &"walk_oswald"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_novea"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j7e4t"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_elp7l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_43rrj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_487ke"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ihk1"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eq3lo"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yohqy"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kutm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhtlb"]
+advance_mode = 2
+advance_condition = &"respawn"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rfug3"]
+states/End/position = Vector2(901, -23)
+states/Start/position = Vector2(10, -23)
+states/attack_oswald/node = SubResource("AnimationNodeAnimation_b6qdc")
+states/attack_oswald/position = Vector2(538, -113)
+states/damage_oswald/node = SubResource("AnimationNodeAnimation_gwcqu")
+states/damage_oswald/position = Vector2(422, 65)
+states/death_oswald/node = SubResource("AnimationNodeAnimation_b7ipi")
+states/death_oswald/position = Vector2(264, 65)
+states/idle_oswald/node = SubResource("AnimationNodeAnimation_2k7ft")
+states/idle_oswald/position = Vector2(422, -23)
+states/spawn_oswald/node = SubResource("AnimationNodeAnimation_hukpg")
+states/spawn_oswald/position = Vector2(164, -29)
+states/walk_oswald/node = SubResource("AnimationNodeAnimation_cp63w")
+states/walk_oswald/position = Vector2(284, -113)
+transitions = ["spawn_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_novea"), "walk_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_j7e4t"), "damage_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_elp7l"), "attack_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_43rrj"), "idle_oswald", "death_oswald", SubResource("AnimationNodeStateMachineTransition_487ke"), "idle_oswald", "walk_oswald", SubResource("AnimationNodeStateMachineTransition_3ihk1"), "idle_oswald", "attack_oswald", SubResource("AnimationNodeStateMachineTransition_eq3lo"), "idle_oswald", "damage_oswald", SubResource("AnimationNodeStateMachineTransition_yohqy"), "Start", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_4kutm"), "death_oswald", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_fhtlb")]
+graph_offset = Vector2(-167, -177)
 
 [node name="fightCharacter" type="Control"]
 layout_mode = 3
@@ -15,9 +219,18 @@ offset_bottom = 16.0
 script = ExtResource("1_sdnhk")
 base_data = ExtResource("2_7sxih")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../char_sprite")
+libraries = {
+"": SubResource("AnimationLibrary_h3r80")
+}
+
 [node name="char_sprite" type="Sprite2D" parent="."]
 position = Vector2(16, 16)
-texture = ExtResource("1_1v8s2")
+texture = ExtResource("3_mmec3")
+hframes = 8
+vframes = 15
+frame = 9
 
 [node name="hp" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -29,3 +242,12 @@ theme = ExtResource("3_k8nsx")
 max_value = 1.0
 value = 1.0
 show_percentage = false
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_rfug3")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/damage = false
+parameters/conditions/death = false
+parameters/conditions/respawn = false
+parameters/conditions/walk = false
