@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dykyli755m8um"]
+[gd_scene load_steps=115 format=3 uid="uid://dykyli755m8um"]
 
 [ext_resource type="Script" path="res://Source/CharacterInstance.gd" id="1_sdnhk"]
 [ext_resource type="Resource" uid="uid://c388g76hjogcv" path="res://CharacterData/hamiltonData.tres" id="2_7sxih"]
@@ -123,31 +123,519 @@ tracks/0/keys = {
 "values": [21, 22, 23, 24, 25, 26, 27, 28, 29]
 }
 
+[sub_resource type="Animation" id="Animation_ibn11"]
+resource_name = "idle_lou"
+length = 0.6667
+loop_mode = 1
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [65, 64]
+}
+
+[sub_resource type="Animation" id="Animation_dolw0"]
+resource_name = "attack_lou"
+length = 0.666675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [73, 74, 75, 76, 73, 74, 75, 76]
+}
+
+[sub_resource type="Animation" id="Animation_610ow"]
+resource_name = "damage_lou"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [77, 78, 77, 78, 77, 78]
+}
+
+[sub_resource type="Animation" id="Animation_wfup5"]
+resource_name = "walk_lou"
+length = 1.33334
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [66, 67, 68, 69, 70, 71, 68, 72, 66, 67, 68, 69, 70, 71, 68, 72]
+}
+
+[sub_resource type="Animation" id="Animation_axpq8"]
+resource_name = "death_lou"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [79, 80, 81, 82, 83, 84]
+}
+
+[sub_resource type="Animation" id="Animation_3njaf"]
+resource_name = "attack_hamilton"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 45, 46, 47, 36]
+}
+
+[sub_resource type="Animation" id="Animation_qmjem"]
+resource_name = "damage_hamilton"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [49, 50, 49, 50, 49, 50]
+}
+
+[sub_resource type="Animation" id="Animation_fwx0i"]
+resource_name = "death_hamilton"
+length = 0.583342
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [51, 52, 53, 54, 55, 56, 57]
+}
+
+[sub_resource type="Animation" id="Animation_g3167"]
+resource_name = "idle_hamilton"
+length = 0.6667
+loop_mode = 1
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [36]
+}
+
+[sub_resource type="Animation" id="Animation_elgs0"]
+resource_name = "spawn_lou"
+length = 0.6667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 58, 59, 60, 61, 62, 63]
+}
+
+[sub_resource type="Animation" id="Animation_2ka2e"]
+resource_name = "spawn_hamilton"
+length = 0.6667
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_ksrw1"]
+resource_name = "walk_hamilton"
+length = 1.33334
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [38, 39, 40, 41, 42, 43, 40, 41, 38, 39, 40, 41, 42, 43, 40, 41]
+}
+
+[sub_resource type="Animation" id="Animation_i4a4b"]
+resource_name = "attack_orc_fire"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [87, 91, 92, 93, 87]
+}
+
+[sub_resource type="Animation" id="Animation_balbc"]
+resource_name = "spawn_orc"
+length = 0.166675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [85, 86]
+}
+
+[sub_resource type="Animation" id="Animation_05158"]
+resource_name = "death_orc"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [114, 115, 116, 117, 118, 119]
+}
+
+[sub_resource type="Animation" id="Animation_okls1"]
+resource_name = "attack_orc_ice"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [96, 100, 101, 102, 96]
+}
+
+[sub_resource type="Animation" id="Animation_wwbqe"]
+resource_name = "attack_orc_poison"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [105, 109, 110, 111, 105]
+}
+
+[sub_resource type="Animation" id="Animation_rusml"]
+resource_name = "damage_orc_fire"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [94, 95, 94, 95, 94, 95]
+}
+
+[sub_resource type="Animation" id="Animation_ofg8l"]
+resource_name = "damage_orc_ice"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [103, 104, 103, 104, 103, 104]
+}
+
+[sub_resource type="Animation" id="Animation_ov7aw"]
+resource_name = "damage_orc_poison"
+length = 0.500008
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [112, 113, 112, 113, 112, 113]
+}
+
+[sub_resource type="Animation" id="Animation_6qd3c"]
+resource_name = "idle_orc_fire"
+length = 0.666683
+loop_mode = 1
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [87, 88, 89, 90]
+}
+
+[sub_resource type="Animation" id="Animation_vclvi"]
+resource_name = "idle_orc_ice"
+length = 0.666683
+loop_mode = 1
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [96, 97, 98, 99]
+}
+
+[sub_resource type="Animation" id="Animation_afhfq"]
+resource_name = "idle_orc_poison"
+length = 0.666683
+loop_mode = 1
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [105, 106, 107, 108]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3r80"]
 _data = {
 "RESET": SubResource("Animation_uxjrg"),
+"attack_hamilton": SubResource("Animation_3njaf"),
+"attack_lou": SubResource("Animation_dolw0"),
+"attack_orc_fire": SubResource("Animation_i4a4b"),
+"attack_orc_ice": SubResource("Animation_okls1"),
+"attack_orc_poison": SubResource("Animation_wwbqe"),
 "attack_oswald": SubResource("Animation_mcruf"),
+"damage_hamilton": SubResource("Animation_qmjem"),
+"damage_lou": SubResource("Animation_610ow"),
+"damage_orc_fire": SubResource("Animation_rusml"),
+"damage_orc_ice": SubResource("Animation_ofg8l"),
+"damage_orc_poison": SubResource("Animation_ov7aw"),
 "damage_oswald": SubResource("Animation_bxhpj"),
+"death_hamilton": SubResource("Animation_fwx0i"),
+"death_lou": SubResource("Animation_axpq8"),
+"death_orc": SubResource("Animation_05158"),
 "death_oswald": SubResource("Animation_qmxte"),
+"idle_hamilton": SubResource("Animation_g3167"),
+"idle_lou": SubResource("Animation_ibn11"),
+"idle_orc_fire": SubResource("Animation_6qd3c"),
+"idle_orc_ice": SubResource("Animation_vclvi"),
+"idle_orc_poison": SubResource("Animation_afhfq"),
 "idle_oswald": SubResource("Animation_gocfl"),
+"spawn_hamilton": SubResource("Animation_2ka2e"),
+"spawn_lou": SubResource("Animation_elgs0"),
+"spawn_orc": SubResource("Animation_balbc"),
 "spawn_oswald": SubResource("Animation_gnw1n"),
+"walk_hamilton": SubResource("Animation_ksrw1"),
+"walk_lou": SubResource("Animation_wfup5"),
 "walk_oswald": SubResource("Animation_3atsi")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_45fx2"]
+animation = &"attack_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tmgmk"]
+animation = &"attack_lou"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j1ufw"]
+animation = &"attack_orc_fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h4do8"]
+animation = &"attack_orc_ice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j8i4p"]
+animation = &"attack_orc_poison"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b6qdc"]
 animation = &"attack_oswald"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lkxf3"]
+animation = &"damage_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gwyf4"]
+animation = &"damage_lou"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5rh2u"]
+animation = &"damage_orc_fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4ja5"]
+animation = &"damage_orc_ice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8v1q6"]
+animation = &"damage_orc_poison"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gwcqu"]
 animation = &"damage_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hpq6y"]
+animation = &"death_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l6vxf"]
+animation = &"death_lou"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m734h"]
+animation = &"death_orc"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b7ipi"]
 animation = &"death_oswald"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q5g61"]
+animation = &"idle_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mbnbt"]
+animation = &"idle_lou"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mrylg"]
+animation = &"idle_orc_fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rmx7v"]
+animation = &"idle_orc_ice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j2tri"]
+animation = &"idle_orc_poison"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2k7ft"]
 animation = &"idle_oswald"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75vpm"]
+animation = &"spawn_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b514e"]
+animation = &"spawn_lou"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_quju8"]
+animation = &"spawn_orc"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hukpg"]
 animation = &"spawn_oswald"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c174q"]
+animation = &"walk_hamilton"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pahmd"]
+animation = &"walk_lou"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cp63w"]
 animation = &"walk_oswald"
@@ -186,28 +674,231 @@ advance_condition = &"damage"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kutm"]
 advance_mode = 2
+advance_condition = &"oswald"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhtlb"]
 advance_mode = 2
 advance_condition = &"respawn"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6sbi3"]
+advance_mode = 2
+advance_condition = &"lou"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_le884"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_clg85"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tq40n"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b33cs"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hrjud"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q34y4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_53lsp"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2f6wo"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d4whd"]
+advance_mode = 2
+advance_condition = &"respawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ljaxw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aq42g"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pa76n"]
+advance_mode = 2
+advance_condition = &"respawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_322mp"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lllak"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urrpt"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wp1p3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uyqgc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_771e5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o2s1k"]
+advance_mode = 2
+advance_condition = &"hamilton"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qmtsh"]
+advance_mode = 2
+advance_condition = &"orc"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s04aq"]
+advance_mode = 2
+advance_condition = &"fire_orc"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_loj6f"]
+advance_mode = 2
+advance_condition = &"ice_orc"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y1d27"]
+advance_mode = 2
+advance_condition = &"poison_orc"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0rndd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n5bo5"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2x64s"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i5il1"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lirl7"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ggnor"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x805l"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sbodo"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0yjqp"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_18twt"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ui6ri"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xaijc"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ky4xb"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vbw3w"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xgpe3"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rfug3"]
 states/End/position = Vector2(901, -23)
 states/Start/position = Vector2(10, -23)
+states/attack_hamilton/node = SubResource("AnimationNodeAnimation_45fx2")
+states/attack_hamilton/position = Vector2(-928, -26)
+states/attack_lou/node = SubResource("AnimationNodeAnimation_tmgmk")
+states/attack_lou/position = Vector2(-42, -343)
+states/attack_orc_fire/node = SubResource("AnimationNodeAnimation_j1ufw")
+states/attack_orc_fire/position = Vector2(-361, 425)
+states/attack_orc_ice/node = SubResource("AnimationNodeAnimation_h4do8")
+states/attack_orc_ice/position = Vector2(117, 358)
+states/attack_orc_poison/node = SubResource("AnimationNodeAnimation_j8i4p")
+states/attack_orc_poison/position = Vector2(275, 501)
 states/attack_oswald/node = SubResource("AnimationNodeAnimation_b6qdc")
 states/attack_oswald/position = Vector2(538, -113)
+states/damage_hamilton/node = SubResource("AnimationNodeAnimation_lkxf3")
+states/damage_hamilton/position = Vector2(-768, 88)
+states/damage_lou/node = SubResource("AnimationNodeAnimation_gwyf4")
+states/damage_lou/position = Vector2(97, -297)
+states/damage_orc_fire/node = SubResource("AnimationNodeAnimation_5rh2u")
+states/damage_orc_fire/position = Vector2(-432, 226)
+states/damage_orc_ice/node = SubResource("AnimationNodeAnimation_d4ja5")
+states/damage_orc_ice/position = Vector2(-89, 362)
+states/damage_orc_poison/node = SubResource("AnimationNodeAnimation_8v1q6")
+states/damage_orc_poison/position = Vector2(485, 455)
 states/damage_oswald/node = SubResource("AnimationNodeAnimation_gwcqu")
 states/damage_oswald/position = Vector2(422, 65)
+states/death_hamilton/node = SubResource("AnimationNodeAnimation_hpq6y")
+states/death_hamilton/position = Vector2(-558, -99)
+states/death_lou/node = SubResource("AnimationNodeAnimation_l6vxf")
+states/death_lou/position = Vector2(-186, -177)
+states/death_orc/node = SubResource("AnimationNodeAnimation_m734h")
+states/death_orc/position = Vector2(0, 654)
 states/death_oswald/node = SubResource("AnimationNodeAnimation_b7ipi")
 states/death_oswald/position = Vector2(264, 65)
+states/idle_hamilton/node = SubResource("AnimationNodeAnimation_q5g61")
+states/idle_hamilton/position = Vector2(-664, -20)
+states/idle_lou/node = SubResource("AnimationNodeAnimation_mbnbt")
+states/idle_lou/position = Vector2(-42, -244)
+states/idle_orc_fire/node = SubResource("AnimationNodeAnimation_mrylg")
+states/idle_orc_fire/position = Vector2(-243, 292)
+states/idle_orc_ice/node = SubResource("AnimationNodeAnimation_rmx7v")
+states/idle_orc_ice/position = Vector2(15, 449)
+states/idle_orc_poison/node = SubResource("AnimationNodeAnimation_j2tri")
+states/idle_orc_poison/position = Vector2(275, 358)
 states/idle_oswald/node = SubResource("AnimationNodeAnimation_2k7ft")
 states/idle_oswald/position = Vector2(422, -23)
+states/spawn_hamilton/node = SubResource("AnimationNodeAnimation_75vpm")
+states/spawn_hamilton/position = Vector2(-445, -20)
+states/spawn_lou/node = SubResource("AnimationNodeAnimation_b514e")
+states/spawn_lou/position = Vector2(-42, -167)
+states/spawn_orc/node = SubResource("AnimationNodeAnimation_quju8")
+states/spawn_orc/position = Vector2(10, 250)
 states/spawn_oswald/node = SubResource("AnimationNodeAnimation_hukpg")
 states/spawn_oswald/position = Vector2(164, -29)
+states/walk_hamilton/node = SubResource("AnimationNodeAnimation_c174q")
+states/walk_hamilton/position = Vector2(-805, -131)
+states/walk_lou/node = SubResource("AnimationNodeAnimation_pahmd")
+states/walk_lou/position = Vector2(-177, -307)
 states/walk_oswald/node = SubResource("AnimationNodeAnimation_cp63w")
 states/walk_oswald/position = Vector2(284, -113)
-transitions = ["spawn_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_novea"), "walk_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_j7e4t"), "damage_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_elp7l"), "attack_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_43rrj"), "idle_oswald", "death_oswald", SubResource("AnimationNodeStateMachineTransition_487ke"), "idle_oswald", "walk_oswald", SubResource("AnimationNodeStateMachineTransition_3ihk1"), "idle_oswald", "attack_oswald", SubResource("AnimationNodeStateMachineTransition_eq3lo"), "idle_oswald", "damage_oswald", SubResource("AnimationNodeStateMachineTransition_yohqy"), "Start", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_4kutm"), "death_oswald", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_fhtlb")]
-graph_offset = Vector2(-167, -177)
+transitions = ["spawn_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_novea"), "walk_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_j7e4t"), "damage_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_elp7l"), "attack_oswald", "idle_oswald", SubResource("AnimationNodeStateMachineTransition_43rrj"), "idle_oswald", "death_oswald", SubResource("AnimationNodeStateMachineTransition_487ke"), "idle_oswald", "walk_oswald", SubResource("AnimationNodeStateMachineTransition_3ihk1"), "idle_oswald", "attack_oswald", SubResource("AnimationNodeStateMachineTransition_eq3lo"), "idle_oswald", "damage_oswald", SubResource("AnimationNodeStateMachineTransition_yohqy"), "Start", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_4kutm"), "death_oswald", "spawn_oswald", SubResource("AnimationNodeStateMachineTransition_fhtlb"), "Start", "spawn_lou", SubResource("AnimationNodeStateMachineTransition_6sbi3"), "spawn_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_le884"), "idle_lou", "attack_lou", SubResource("AnimationNodeStateMachineTransition_clg85"), "idle_lou", "walk_lou", SubResource("AnimationNodeStateMachineTransition_tq40n"), "idle_lou", "damage_lou", SubResource("AnimationNodeStateMachineTransition_b33cs"), "idle_lou", "death_lou", SubResource("AnimationNodeStateMachineTransition_hrjud"), "attack_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_q34y4"), "walk_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_53lsp"), "damage_lou", "idle_lou", SubResource("AnimationNodeStateMachineTransition_2f6wo"), "death_lou", "spawn_lou", SubResource("AnimationNodeStateMachineTransition_d4whd"), "spawn_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_ljaxw"), "idle_hamilton", "death_hamilton", SubResource("AnimationNodeStateMachineTransition_aq42g"), "death_hamilton", "spawn_hamilton", SubResource("AnimationNodeStateMachineTransition_pa76n"), "idle_hamilton", "attack_hamilton", SubResource("AnimationNodeStateMachineTransition_322mp"), "idle_hamilton", "walk_hamilton", SubResource("AnimationNodeStateMachineTransition_lllak"), "idle_hamilton", "damage_hamilton", SubResource("AnimationNodeStateMachineTransition_urrpt"), "attack_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_wp1p3"), "walk_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_uyqgc"), "damage_hamilton", "idle_hamilton", SubResource("AnimationNodeStateMachineTransition_771e5"), "Start", "spawn_hamilton", SubResource("AnimationNodeStateMachineTransition_o2s1k"), "Start", "spawn_orc", SubResource("AnimationNodeStateMachineTransition_qmtsh"), "spawn_orc", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_s04aq"), "spawn_orc", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_loj6f"), "spawn_orc", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_y1d27"), "attack_orc_fire", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_0rndd"), "idle_orc_fire", "attack_orc_fire", SubResource("AnimationNodeStateMachineTransition_n5bo5"), "idle_orc_ice", "attack_orc_ice", SubResource("AnimationNodeStateMachineTransition_2x64s"), "idle_orc_poison", "attack_orc_poison", SubResource("AnimationNodeStateMachineTransition_i5il1"), "attack_orc_ice", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_lirl7"), "attack_orc_poison", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_ggnor"), "idle_orc_fire", "death_orc", SubResource("AnimationNodeStateMachineTransition_x805l"), "idle_orc_ice", "death_orc", SubResource("AnimationNodeStateMachineTransition_sbodo"), "idle_orc_poison", "death_orc", SubResource("AnimationNodeStateMachineTransition_0yjqp"), "idle_orc_ice", "damage_orc_ice", SubResource("AnimationNodeStateMachineTransition_18twt"), "damage_orc_ice", "idle_orc_ice", SubResource("AnimationNodeStateMachineTransition_ui6ri"), "idle_orc_poison", "damage_orc_poison", SubResource("AnimationNodeStateMachineTransition_xaijc"), "idle_orc_fire", "damage_orc_fire", SubResource("AnimationNodeStateMachineTransition_ky4xb"), "damage_orc_fire", "idle_orc_fire", SubResource("AnimationNodeStateMachineTransition_vbw3w"), "damage_orc_poison", "idle_orc_poison", SubResource("AnimationNodeStateMachineTransition_xgpe3")]
+graph_offset = Vector2(-442, 102)
 
 [node name="fightCharacter" type="Control"]
 layout_mode = 3
@@ -246,8 +937,16 @@ show_percentage = false
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_rfug3")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/conditions/attack = false
 parameters/conditions/damage = false
 parameters/conditions/death = false
+parameters/conditions/fire_orc = false
+parameters/conditions/hamilton = false
+parameters/conditions/ice_orc = false
+parameters/conditions/lou = false
+parameters/conditions/orc = false
+parameters/conditions/oswald = false
+parameters/conditions/poison_orc = false
 parameters/conditions/respawn = false
 parameters/conditions/walk = false
