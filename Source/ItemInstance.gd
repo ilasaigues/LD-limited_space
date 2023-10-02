@@ -11,8 +11,7 @@ var rotationIndex = 0
 var is_stored:bool = false
 var stored_center_slot:Vector2i = Vector2i(-1,-1)
 
-enum SPECIAL_PROPERTY { None = 0,Fire=1, Ice=2, Acid=4}
-var property:SPECIAL_PROPERTY = SPECIAL_PROPERTY.None
+var property:GameRules.ElementType = GameRules.ElementType.None
 
 
 func Init(data:ItemData):
@@ -24,11 +23,11 @@ func Init(data:ItemData):
 	property = randi()%4
 	if property == 3: property= 4
 	match property:
-		SPECIAL_PROPERTY.Fire:
+		GameRules.ElementType.Fire:
 			glow_display.modulate = Color.ORANGE_RED
-		SPECIAL_PROPERTY.Ice:
+		GameRules.ElementType.Ice:
 			glow_display.modulate = Color.CYAN
-		SPECIAL_PROPERTY.Acid:
+		GameRules.ElementType.Acid:
 			glow_display.modulate = Color.DARK_GREEN
 
 func Rotate(clockwise:bool):

@@ -16,5 +16,10 @@ func set_item(item:ItemInstance):
 	if storedItem:
 		item.position = self.get_global_rect().position + self.get_global_rect().size/2 -item.base_data.textureOffset
 
+func consume_item():
+	if storedItem:
+		storedItem.queue_free()
+		storedItem = null
+
 func _pressed():
 	gridContainer.on_equip_slot_pressed(self)

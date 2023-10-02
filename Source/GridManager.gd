@@ -159,7 +159,7 @@ func on_equip_slot_pressed(slot:UsableItemSlot):
 	if slot.storedItem :
 		selectedItem = slot.storedItem
 		slot.set_item(null)
-	else:
+	elif selectedItem:
 		if(slot.characterData.compatibleItems.has(selectedItem.base_data)):
 			slot.set_item(selectedItem)
 			selectedItem = null

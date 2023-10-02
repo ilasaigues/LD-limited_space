@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://qsh377ah5ejp"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://qsh377ah5ejp"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_vcd0j"]
 [ext_resource type="Resource" uid="uid://bjr3xwvyspfyw" path="res://WeaponData/wp_data_staff.tres" id="1_wegyd"]
 [ext_resource type="Texture2D" uid="uid://bw4xwkpulon7w" path="res://Sprites/Characters/Lou.png" id="2_2q0dr"]
+[ext_resource type="Resource" uid="uid://btx70medhwok0" path="res://WeaponData/wp_data_scroll.tres" id="2_tmc6q"]
 
 [resource]
 script = ExtResource("1_vcd0j")
 maxHP = 8
 texture = ExtResource("2_2q0dr")
-compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_wegyd")])
+compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_wegyd"), ExtResource("2_tmc6q")])
 animationName = "lou"
 element = 0
