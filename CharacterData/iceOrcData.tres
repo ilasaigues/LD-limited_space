@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dd1qwqr6nrmfp"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3 uid="uid://dd1qwqr6nrmfp"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_gggpl"]
 [ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="2_rl7nf"]
+[ext_resource type="PackedScene" uid="uid://d1ijkl545q0ir" path="res://Prefabs/Attacks/melee_fire.tscn" id="4_me6m5"]
+[ext_resource type="PackedScene" uid="uid://yksxi5oumb3m" path="res://Prefabs/Attacks/melee_ice.tscn" id="5_i5o76"]
+[ext_resource type="PackedScene" uid="uid://ddd8pjep1epe" path="res://Prefabs/Attacks/melee_poison.tscn" id="6_c55sh"]
 
 [resource]
 script = ExtResource("1_gggpl")
@@ -10,3 +13,9 @@ texture = ExtResource("2_rl7nf")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([])
 animationName = "orc"
 element = 2
+vfxDictionary = {
+0: ExtResource("5_i5o76"),
+1: ExtResource("4_me6m5"),
+2: ExtResource("5_i5o76"),
+4: ExtResource("6_c55sh")
+}

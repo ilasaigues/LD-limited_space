@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://qsh377ah5ejp"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=9 format=3 uid="uid://qsh377ah5ejp"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_vcd0j"]
 [ext_resource type="Resource" uid="uid://bjr3xwvyspfyw" path="res://WeaponData/wp_data_staff.tres" id="1_wegyd"]
 [ext_resource type="Texture2D" uid="uid://bw4xwkpulon7w" path="res://Sprites/Characters/Lou.png" id="2_2q0dr"]
 [ext_resource type="Resource" uid="uid://btx70medhwok0" path="res://WeaponData/wp_data_scroll.tres" id="2_tmc6q"]
+[ext_resource type="PackedScene" uid="uid://5uxoogls3812" path="res://Prefabs/Attacks/default_attack.tscn" id="5_al0w0"]
+[ext_resource type="PackedScene" uid="uid://fkfqn0xdgwgu" path="res://Prefabs/Attacks/magic_fire.tscn" id="6_v08wb"]
+[ext_resource type="PackedScene" uid="uid://bmmpev02cfgm7" path="res://Prefabs/Attacks/magic_ice.tscn" id="7_5a8dj"]
+[ext_resource type="PackedScene" uid="uid://b5bwhesuj0smf" path="res://Prefabs/Attacks/magic_poison.tscn" id="8_euk7v"]
 
 [resource]
 script = ExtResource("1_vcd0j")
@@ -12,3 +16,9 @@ texture = ExtResource("2_2q0dr")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_wegyd"), ExtResource("2_tmc6q")])
 animationName = "lou"
 element = 0
+vfxDictionary = {
+0: ExtResource("5_al0w0"),
+1: ExtResource("6_v08wb"),
+2: ExtResource("7_5a8dj"),
+4: ExtResource("8_euk7v")
+}

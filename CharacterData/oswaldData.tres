@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://dw7wev02nxlka"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=9 format=3 uid="uid://dw7wev02nxlka"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_jrdup"]
 [ext_resource type="Resource" uid="uid://1fow4xlplabs" path="res://WeaponData/wp_data_axe.tres" id="1_jxw56"]
 [ext_resource type="Resource" uid="uid://b42kaasl7uw7o" path="res://WeaponData/wp_data_flail.tres" id="2_j5vnj"]
 [ext_resource type="Texture2D" uid="uid://cdos0im0hdyas" path="res://Sprites/Characters/Oswald.png" id="2_m63un"]
+[ext_resource type="PackedScene" uid="uid://5uxoogls3812" path="res://Prefabs/Attacks/default_attack.tscn" id="5_6tc0k"]
+[ext_resource type="PackedScene" uid="uid://d1ijkl545q0ir" path="res://Prefabs/Attacks/melee_fire.tscn" id="6_vm6d8"]
+[ext_resource type="PackedScene" uid="uid://yksxi5oumb3m" path="res://Prefabs/Attacks/melee_ice.tscn" id="7_sobij"]
+[ext_resource type="PackedScene" uid="uid://ddd8pjep1epe" path="res://Prefabs/Attacks/melee_poison.tscn" id="8_vtx6g"]
 
 [resource]
 script = ExtResource("1_jrdup")
@@ -12,3 +16,9 @@ texture = ExtResource("2_m63un")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_jxw56"), ExtResource("2_j5vnj")])
 animationName = "oswald"
 element = 0
+vfxDictionary = {
+0: ExtResource("5_6tc0k"),
+1: ExtResource("6_vm6d8"),
+2: ExtResource("7_sobij"),
+4: ExtResource("8_vtx6g")
+}

@@ -1,15 +1,14 @@
 extends AnimationPlayer
-enum Types {melee, range, magic, none}
+enum Types {none, melee, range, magic}
 @export var type: Types
-enum Elements {ice, fire, poison, none}
-@export var element: Elements
+@export var element: GameRules.ElementType
 
-var type_dictionary = {0: "melee", 1: "range", 2: "magic"}
-var element_dictionary = {0: "ice", 1: "fire", 2: "poison"}
+var type_dictionary = {1: "melee", 2: "range", 3: "magic"}
+var element_dictionary = {2: "ice", 1: "fire", 4: "poison"}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if(element == 3 || type == 3):
+	if(element == 0 || type == 0):
 		current_animation = "default_attack"
 	else:
 		current_animation = (type_dictionary[type] + "_" + element_dictionary[element])

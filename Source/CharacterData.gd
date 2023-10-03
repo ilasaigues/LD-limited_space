@@ -8,3 +8,9 @@ class_name CharacterData
 @export var animationName:String
 
 @export var element:GameRules.ElementType = GameRules.ElementType.None
+
+@export var vfxDictionary = {
+	GameRules.ElementType.None:null, 
+	GameRules.ElementType.Fire:null,
+	GameRules.ElementType.Ice:null,
+	GameRules.ElementType.Acid:null}

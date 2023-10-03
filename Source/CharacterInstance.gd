@@ -42,12 +42,14 @@ func SetAnimatorCondition(condition:String,value:bool):
 	$AnimationTree["parameters/conditions/"+condition]=value
 
 func attack(target:CharacterInstance):
+	var attackElement = GameRules.ElementType.None
 	SetAnimatorCondition("attack", true)
 	is_animating=true
 	target.SetAnimatorCondition("damage", true)	
 	var damage = 1
 	if item_slot && item_slot.storedItem:
 		var storedItem = item_slot.storedItem
+		attackElement = storedItem.property
 		if storedItem.property == GameRules.ElementType.None:
 			damage += 1
 		else:
@@ -58,6 +60,9 @@ func attack(target:CharacterInstance):
 	else:
 		target.TakeDamage(1)
 		TakeDamage(1)
+	var vfx = base_data.vfxDictionary[attackElement].instantiate()
+	target.add_child(vfx)
+	vfx.global_position = target.global_position + target.get_rect().size/3
 	await get_tree().process_frame
 	await get_tree().process_frame
 	SetAnimatorCondition("attack", false)

@@ -318,5 +318,5 @@ libraries = {
 "": SubResource("AnimationLibrary_4m6gr")
 }
 script = ExtResource("2_6aotw")
-type = 2
+type = 3
 element = 1

@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://c388g76hjogcv"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=9 format=3 uid="uid://c388g76hjogcv"]
 
 [ext_resource type="Script" path="res://Source/CharacterData.gd" id="1_21l8l"]
 [ext_resource type="Resource" uid="uid://ds4y6j87krucu" path="res://WeaponData/wp_data_crossbow.tres" id="1_wkd2u"]
 [ext_resource type="Texture2D" uid="uid://cygreurl5kqe2" path="res://Sprites/Characters/Hamilton.png" id="2_04xli"]
 [ext_resource type="Resource" uid="uid://b05wq7r3pnb6q" path="res://WeaponData/wp_data_dagger.tres" id="2_ron0c"]
+[ext_resource type="PackedScene" uid="uid://5uxoogls3812" path="res://Prefabs/Attacks/default_attack.tscn" id="5_0vd24"]
+[ext_resource type="PackedScene" uid="uid://bklex2mqrgk7j" path="res://Prefabs/Attacks/range_fire.tscn" id="6_3rvyg"]
+[ext_resource type="PackedScene" uid="uid://dts33e5gsc2ky" path="res://Prefabs/Attacks/range_ice.tscn" id="7_vkjio"]
+[ext_resource type="PackedScene" uid="uid://c1vfwasvwcb44" path="res://Prefabs/Attacks/range_poison.tscn" id="8_cfbp3"]
 
 [resource]
 script = ExtResource("1_21l8l")
@@ -12,3 +16,9 @@ texture = ExtResource("2_04xli")
 compatibleItems = Array[Resource("res://Source/ItemData.gd")]([ExtResource("1_wkd2u"), ExtResource("2_ron0c")])
 animationName = "hamilton"
 element = 0
+vfxDictionary = {
+0: ExtResource("5_0vd24"),
+1: ExtResource("6_3rvyg"),
+2: ExtResource("7_vkjio"),
+4: ExtResource("8_cfbp3")
+}
